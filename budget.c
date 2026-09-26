@@ -4,13 +4,15 @@
 //Function Declaration
 void budgetMenu();
 
-/* int main(){
-  budgetMenu();
-return 0;
-} */
-
 void budgetMenu() {
 
+  int salary;
+
   printf("\nWELLCOME TO BUDGET MENU\n");
+
+  printf("Insert your salary: ");
+  scanf("%d", &salary);
+
+  printf("Your salary is: %d\n", salary);
 
 }
