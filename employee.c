@@ -3,22 +3,77 @@
 
 //Function Declaration
 void employeeMenu();
+void addEmployee();
+void displayEmployees();
+
+ int employeeNum = 1;
+ int age[1];
+ char employeeName[1][50];
+ int employeeID[1];
+ char department[50];
 
 void employeeMenu() {
 
-  char name[50];
-  int age;
+  int option;
 
-  printf("\nWELLCOME TO EMPLOYEE MENU\n");
+    printf("\n======WELCOME TO EMPLOYEE MENU======\n");
+    printf("1. Add Employee\n");
+    printf("2. Display Employees\n");
+    printf("3. Search Employee\n");
+    printf("4. Calculate Salary\n");
+    printf("5. Display Employee Details\n");
+    printf("6. Exit\n");
 
-  printf("Insert first name: ");
-  scanf("%49s", &name);
+    printf("Enter your choice: ");
+    scanf("%d", &option); 
 
-  printf("Enter age: ");
-  scanf("%d", &age);
+  int age[employeeNum];
+  char employeeName[employeeNum][50];
+  int employeeID[employeeNum];
+  char department[50];
 
-  printf("\nEmployee Name: %s\n", name);
-  printf("Employee Age: %d\n", age);
+    switch(option){
 
+      case 1:
+        addEmployee();
+        void employeeMenu(); // Return to the employee menu after adding employees
+        break;
+
+      case 2:
+        displayEmployees();
+        void employeeMenu(); // Return to the employee menu after displaying employees
+        break;
+      case 3:
+        //searchEmployee();
+        break;
+    }
+
+}
+
+void addEmployee() {
+ 
+  
+  printf("\nEnter the number of employees to add: ");
+  scanf("%d", &employeeNum);
+
+  for(int i = 0; i < employeeNum; i++) {
+    
+    printf("\nEnter details for Employee %d:\n", i + 1);
+    printf("Name: ");
+    fgets(employeeName[i], sizeof(employeeName[i]), stdin);
+
+  }
+
+}
+
+void displayEmployees() {
+  // This function will display the list of employees
+  printf("\nDisplaying Employees...\n");
+
+  for(int i = 0; i < employeeNum; i++) {
+    printf("Employee %d: \nName: %s\n", i + 1, employeeName[i]);
+  }
+
+  // Implementation for displaying employees will go here
 
 }
